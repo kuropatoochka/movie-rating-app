@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/counter-redux.iml" filepath="$PROJECT_DIR$/.idea/counter-redux.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/film-app-redux.iml" filepath="$PROJECT_DIR$/.idea/film-app-redux.iml" />
     </modules>
   </component>
 </project>

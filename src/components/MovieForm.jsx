@@ -1,31 +1,31 @@
 import React, {useState} from 'react';
 import {Button, TextField} from "@mui/material";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {addMovie} from "../store/actions";
 
-const AdditionMovie = () => {
+const MovieForm = () => {
   const [inputValue, setInputValue] = useState('')
+  const movies = useSelector((state) => state.movies)
   const dispatch = useDispatch()
 
   const handleAddMovie = () => {
-    if (inputValue) {
+    if (inputValue && !movies.includes(inputValue)) {
       dispatch(addMovie(inputValue))
-      setInputValue('')
     }
+    setInputValue('')
   }
 
   return (
     <form style={{display: "flex", flexDirection: "column", alignItems: "center", gap: "10px"}}>
       <TextField id="outlined-basic"
-                 label="Movie"
+                 label="add movie"
                  variant="outlined"
                  value={inputValue}
                  onChange={(e) => setInputValue(e.target.value)}
-                 placeholder='Write a movie name'
       />
       <Button variant="contained" onClick={handleAddMovie}>Add movie</Button>
     </form>
   );
 };
 
-export default AdditionMovie;
+export default MovieForm;
