@@ -1,7 +1,8 @@
+import styles from './styles.module.css'
 import React, {useState} from 'react';
 import {Button, TextField} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
-import {addMovie} from "../store/actions";
+import {addMovie} from "../../store/actions";
 
 const MovieForm = () => {
   const [inputValue, setInputValue] = useState('')
@@ -9,14 +10,15 @@ const MovieForm = () => {
   const dispatch = useDispatch()
 
   const handleAddMovie = () => {
-    if (inputValue && !movies.includes(inputValue)) {
+    const isMovie = movies.some(movie => movie.title === inputValue)
+    if (inputValue && !isMovie) {
       dispatch(addMovie(inputValue))
     }
     setInputValue('')
   }
 
   return (
-    <form style={{display: "flex", flexDirection: "column", alignItems: "center", gap: "10px"}}>
+    <form className={styles.form}>
       <TextField id="outlined-basic"
                  label="add movie"
                  variant="outlined"
