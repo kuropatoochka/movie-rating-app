@@ -1,0 +1,23 @@
+.search {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 60px;
+    padding: 10px 20px;
+    text-align: left;
+    background-color: white;
+}
+
+.search__input {
+    flex-grow: 1;
+    color: var(--main-dark-color);
+}
+
+.search__input::placeholder {
+    color: var(--subtext-color);
+}
+
+.search__submit {
+    cursor: pointer;
+    background-color: transparent;
+}

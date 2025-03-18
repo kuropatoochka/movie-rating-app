@@ -1,41 +1,20 @@
-import styles from './styles.module.css'
-import React from 'react';
+import styles from './styles.module.css';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {Button, Rating} from "@mui/material";
-import {TrashBin} from '@gravity-ui/icons';
-import {rateMovie, removeMovie, sortMovie} from "../../store/actions";
+import MovieCard from "../MovieCard/MovieCard";
+import {fetchTopMovies} from "../../redux/actions/movieAsyncActions";
 
-const MovieList = () => {
+const MovieList = ({category}) => {
   const movies = useSelector((state) => state.movies)
   const dispatch = useDispatch()
 
-  const handleSortMovie = () => {
-    dispatch(sortMovie())
-  }
-
-  const handleRateMovie = (id, value) => {
-    dispatch(rateMovie(id, value))
-  }
-
-  const handleRemoveMovie = (id) => {
-    dispatch(removeMovie(id))
-  }
+  useEffect(() => {
+    dispatch(fetchTopMovies(category))
+  }, [dispatch, category]);
 
   return (
     <ul className={styles.list}>
-      {movies?.map(movie => (
-        <li key={movie.id} className={styles.item}>
-          {movie.title}
-          <Rating
-            name="size-small"
-            size="small"
-            onChange={(e, newValue) => {
-              handleRateMovie(movie.id, newValue)
-            }}/>
-          <TrashBin className={styles.trashBin} onClick={() => handleRemoveMovie(movie.id)}/>
-        </li>
-      ))}
-      <Button variant="contained" onClick={handleSortMovie}>Sort Movies</Button>
+      {movies.items && movies.items.map(movie => <MovieCard movie={movie}/>)}
     </ul>
   );
 };
