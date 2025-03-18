@@ -2,7 +2,7 @@ import styles from './styles.module.css'
 import React, {useState} from 'react';
 import {Button, TextField} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
-import {addMovie} from "../../store/actions";
+import {addMovie} from "../../redux/actions/movieActions";
 
 const MovieForm = () => {
   const [inputValue, setInputValue] = useState('')

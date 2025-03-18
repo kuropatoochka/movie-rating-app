@@ -1,13 +1,16 @@
 import React from 'react';
-import MovieList from "./components/MovieList/MovieList";
-import MovieForm from "./components/MovieForm/MovieForm";
+import MovieListPage from "./pages/MovieListPage/MovieListPage";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
-    <main>
-      <MovieList/>
-      <MovieForm/>
-    </main>
+    <div>
+      <Header/>
+      <MovieListPage/>
+      <Footer/>
+    </div>
+
   );
 };
 

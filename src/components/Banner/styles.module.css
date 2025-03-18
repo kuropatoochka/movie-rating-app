@@ -1,0 +1,38 @@
+.banner {
+    height: 548px;
+    margin: 0 60px;
+    padding: 34px;
+    display: flex;
+    gap: 40px;
+    border-radius: 10px;
+    background-color: var(--main-dark-color);
+}
+
+.banner__content {
+    width: 448px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.extra_text {
+    font-size: 24px;
+    line-height: 100%;
+    font-weight: 700;
+}
+
+.banner__content_movie_info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.banner__content_title, .banner__content_description, .extra_text {
+    color: white;
+}
+
+.banner__image {
+    width: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+}

@@ -1,0 +1,7 @@
+.catalog {
+    margin: 0 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
