@@ -2,8 +2,13 @@ const initialState = {
   movies: []
 }
 
-const filmReducer = (state = initialState, action) => {
+const movieReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "SET_MOVIES" || "SEARCH_MOVIES":
+      return {
+        ...state,
+        movies: action.payload
+      }
     case "ADD_MOVIE":
       return {
         ...state,
@@ -35,4 +40,4 @@ const filmReducer = (state = initialState, action) => {
   }
 }
 
-export default filmReducer
+export default movieReducer

@@ -1,0 +1,23 @@
+.categories {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.item, .active {
+    height: 44px;
+    padding: 10px 30px;
+    border-radius: 60px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    color: var(--main-dark-color);
+    background-color: transparent;
+    transition: all 0.3s ease-out;
+}
+
+.item:hover, .active {
+    color: white;
+    background-color: var(--main-dark-color);
+}

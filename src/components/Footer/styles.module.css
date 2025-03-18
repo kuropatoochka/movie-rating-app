@@ -1,0 +1,29 @@
+.footer {
+    width: 100%;
+    height: 198px;
+    padding: 67px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--main-dark-color);
+}
+
+.logo {
+    font-family: "Bayon", sans-serif;
+    font-size: 40px;
+    line-height: 100%;
+    font-weight: 400;
+    color: var(--secondary-color);
+}
+
+.footer__content_links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+.footer__content_link {
+    color: white;
+}
+

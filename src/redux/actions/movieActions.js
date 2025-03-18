@@ -1,3 +1,9 @@
+export const setMovies = (movies) => {
+  return {
+    type: "SET_MOVIES",
+    payload: movies
+  }
+}
 export const addMovie = (movieName) => {
   return {
     type: "ADD_MOVIE",
@@ -16,8 +22,9 @@ export const rateMovie = (id, rate) => {
     payload: {id, rate}
   }
 }
-export const sortMovie = () => {
+export const searchMovie = (movies) => {
   return {
-    type: "SORT_MOVIES",
+    type: "SEARCH_MOVIE",
+    payload: movies
   }
 }
