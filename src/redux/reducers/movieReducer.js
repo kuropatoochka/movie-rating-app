@@ -1,10 +1,11 @@
 const initialState = {
-  movies: []
+  movies: [],
+  searchMovies: []
 }
 
 const movieReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "SET_MOVIES" || "SEARCH_MOVIES":
+    case "SET_MOVIES":
       return {
         ...state,
         movies: action.payload
@@ -34,6 +35,11 @@ const movieReducer = (state = initialState, action) => {
       return {
         ...state,
         movies: [...state.movies].sort((a, b) => a.rating - b.rating)
+      }
+    case "SEARCH_MOVIE":
+      return {
+        ...state,
+        searchMovies: action.payload
       }
     default:
       return state

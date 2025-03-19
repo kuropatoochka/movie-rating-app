@@ -1,6 +1,7 @@
 .movie {
     max-width: 240px;
     min-width: 205px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -14,6 +15,7 @@
 }
 
 .movie__info {
+    width: 100%;
     margin-bottom: 8px;
     display: flex;
     justify-content: space-between;
@@ -31,4 +33,31 @@
 
 .movie__rating {
     color: var(--rating-color);
+}
+
+.movie.suggest {
+    max-width: 100%;
+    min-height: 36px;
+    padding: 10px 16px;
+    flex-direction: row;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.movie.suggest .movie__title {
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.movie.suggest .movie__image {
+    width: 40px;
+    height: 100%;
+    margin-right: 10px;
+    margin-bottom: 0;
+    border-radius: 5px;
+}
+
+.movie.suggest .movie__year, .movie__rating {
+    font-size: 13px;
+    line-height: 18px;
 }
