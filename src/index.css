@@ -22,6 +22,7 @@ ul, li {
 }
 
 input, button {
+    font-family: 'Ubuntu', sans-serif;
     outline: none;
     border: none;
 }

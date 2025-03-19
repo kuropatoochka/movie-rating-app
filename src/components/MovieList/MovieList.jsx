@@ -14,7 +14,7 @@ const MovieList = ({category}) => {
 
   return (
     <ul className={styles.list}>
-      {movies.items && movies.items.map(movie => <MovieCard movie={movie}/>)}
+      {movies.items && movies.items.map(movie => <MovieCard key={movie.kinopoiskId} movie={movie}/>)}
     </ul>
   );
 };
